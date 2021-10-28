@@ -5,10 +5,6 @@
 
 #include "game.h"
 
-// void removeElement(void* beg, size_t i, size_t length, size_t elementSize) {
-//     memmove(beg + i * elementSize, beg + i * elementSize + 1, elementSize * (length - i - 1));
-// }
-
 void removeElement(Player *array, int index, int array_length) {
    int i;
    for(i = index; i < array_length - 1; i++) array[i] = array[i + 1];
