@@ -54,7 +54,7 @@ size_t playRound(Player players[], size_t size, void(*onDecision)(Player, bool))
         players[i].value /= rand() % 3 + 1;
 
         if (!result) {
-            // removeElement(players, i, size);
+            removeElement(players, i, size);
             numberOfSurvivors--;
         }
     }
