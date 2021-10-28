@@ -47,13 +47,14 @@ size_t playRound(Player players[], size_t size, void(*onDecision)(Player, bool))
 
     for (size_t i = 0; i < size; i++) {
         Player currentPlayer = players[i];
-        players[i].value /= rand() % 3 + 1;
 
         bool result = judgePlayer(currentPlayer);
         onDecision(currentPlayer, result);
 
+        players[i].value /= rand() % 3 + 1;
+
         if (!result) {
-            removeElement(players, i, size);
+            // removeElement(players, i, size);
             numberOfSurvivors--;
         }
     }
@@ -63,7 +64,7 @@ size_t playRound(Player players[], size_t size, void(*onDecision)(Player, bool))
 
 Player play(Player players[], size_t size, void(*onDecision)(Player, bool)) {
     while (size > 1) {
-        printf("-------------");
+        printf("-------------\n");
         size = playRound(players, size, onDecision);
 
         printf("Press enter to calculate next round\n\n");
