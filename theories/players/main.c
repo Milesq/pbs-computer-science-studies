@@ -8,7 +8,7 @@
 
 void logPlayerInfo(Player player, bool didPass) {
     char* message = didPass ? "survived" : "has been eliminated";
-    // printf("Player %d %s with value %d\n\n", player.id, message, player.value);
+    printf("Player %d %s with value %d\n\n", player.id, message, player.value);
 }
 
 void main() {
@@ -18,6 +18,7 @@ void main() {
     printf("Podaj liczbe graczy: ");
     scanf("%zu", &numberOfPlayers);
     printf("\n\n");
+    fflush(stdin);
 
     Player* players = malloc(sizeof(Player) * numberOfPlayers);
 
@@ -26,7 +27,9 @@ void main() {
         players[i].value = rand() * rand();
     }
 
-    play(players, numberOfPlayers, logPlayerInfo);
+    Player winner = play(players, numberOfPlayers, logPlayerInfo);
+
+    printf("Player %d won the game with value: %d", winner.id, winner.value);
 
     free(players);
     players = NULL;

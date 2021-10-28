@@ -12,6 +12,6 @@ typedef bool(*Judge)(Player);
 
 bool judgePlayer(Player);
 
-void play(Player[], size_t size, void(*)(Player, bool));
+Player play(Player[], size_t size, void(*)(Player, bool));
 
 #endif

@@ -61,13 +61,14 @@ size_t playRound(Player players[], size_t size, void(*onDecision)(Player, bool))
     return numberOfSurvivors;
 }
 
-void play(Player players[], size_t size, void(*onDecision)(Player, bool)) {
-    for (int i = 0; i < size; ++i)
-        printf("%d\n", players[i].id);
+Player play(Player players[], size_t size, void(*onDecision)(Player, bool)) {
+    while (size > 1) {
+        printf("-------------");
+        size = playRound(players, size, onDecision);
 
-    size = playRound(players, size, onDecision);
+        printf("Press enter to calculate next round\n\n");
+        getchar();
+    }
 
-    printf("\n");
-    for (int i = 0; i < size; ++i)
-        printf("%d\n", players[i].id);
+    return players[0];
 }
