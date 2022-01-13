@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-void main() {
+void main()
+{
     srand(time(NULL));
 
     int result = 0;
-    while (result != 6) {
+    while (result != 6)
+    {
         result = (rand() % 6) + 1;
     }
 

@@ -3,7 +3,8 @@
 
 const double SECONDS_IN_YEAR = 3.156 * 10000000;
 
-void main() {
+void main()
+{
     float userAge;
     scanf("%f", &userAge);
 

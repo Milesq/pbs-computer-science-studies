@@ -1,9 +1,13 @@
-void main() {
+void main()
+{
     int x, y;
 
-    if (y < 0) {
+    if (y < 0)
+    {
         x = -y;
-    } else {
+    }
+    else
+    {
         x = y;
     }
 }

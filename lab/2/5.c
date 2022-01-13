@@ -1,22 +1,23 @@
 #include <stdio.h>
 
 char HELP_MSG[] = "1.\n"
-" -\n"
-"| |\n"
-" -\n\n"
-"2.\n"
-"---------\n"
-"|       |\n"
-"---------\n\n"
-"3.\n"
-"  /\\\n"
-" /  \\\n"
-"/    \\\n"
-"------\n\n\n";
+                  " -\n"
+                  "| |\n"
+                  " -\n\n"
+                  "2.\n"
+                  "---------\n"
+                  "|       |\n"
+                  "---------\n\n"
+                  "3.\n"
+                  "  /\\\n"
+                  " /  \\\n"
+                  "/    \\\n"
+                  "------\n\n\n";
 
-typedef int(*Operation)();
+typedef int (*Operation)();
 
-int square() {
+int square()
+{
     int a;
 
     printf("a: ");
@@ -25,7 +26,8 @@ int square() {
     return a * a;
 }
 
-int rectangle() {
+int rectangle()
+{
     int a, b;
 
     printf("a b: ");
@@ -34,7 +36,8 @@ int rectangle() {
     return a * b;
 }
 
-int triangle() {
+int triangle()
+{
     int a, h;
 
     printf("a h: ");
@@ -43,7 +46,8 @@ int triangle() {
     return (a * h) / 2;
 }
 
-int main() {
+int main()
+{
     size_t option;
 
     Operation operations[] = {square, rectangle, triangle};
@@ -52,7 +56,8 @@ int main() {
     scanf("%zu", &option);
     fseek(stdin, 0, SEEK_END);
 
-    if (option > 3) {
+    if (option > 3)
+    {
         printf("You have to pass number between 1 - 3");
         return -1;
     }

@@ -3,7 +3,8 @@
 
 double bmi(float weight, float height);
 
-void main() {
+void main()
+{
     int weight, height;
 
     printf("Podaj wage i wzrost: ");
@@ -12,6 +13,7 @@ void main() {
     printf("twoje BMI to %f", bmi((float)weight, (float)height));
 }
 
-double bmi(float weight, float height) {
+double bmi(float weight, float height)
+{
     return weight / pow(height / 100, 2);
 }

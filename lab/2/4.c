@@ -1,32 +1,39 @@
 #include <stdio.h>
 
-typedef double(*Operator)(double, double);
+typedef double (*Operator)(double, double);
 
-double add(double a, double b) {
-    return a + b; 
+double add(double a, double b)
+{
+    return a + b;
 }
 
-double sub(double a, double b) {
-    return a - b; 
+double sub(double a, double b)
+{
+    return a - b;
 }
 
-double mult(double a, double b) {
-    return a * b; 
+double mult(double a, double b)
+{
+    return a * b;
 }
 
-double div(double a, double b) {
-    return a / b; 
+double div(double a, double b)
+{
+    return a / b;
 }
 
-double calculate(double a, double b, char operation) {
+double calculate(double a, double b, char operation)
+{
     char operationsKeys[] = "+-*/";
 
     Operator operations[] = {add, sub, mult, div};
 
     Operator currentOperator;
 
-    for (size_t i = 0; i < 4; ++i) {
-        if (operationsKeys[i] == operation) {
+    for (size_t i = 0; i < 4; ++i)
+    {
+        if (operationsKeys[i] == operation)
+        {
             currentOperator = operations[i];
 
             break;
@@ -36,7 +43,8 @@ double calculate(double a, double b, char operation) {
     return currentOperator(a, b);
 }
 
-void main() {
+void main()
+{
     float a, b;
     char operator;
 

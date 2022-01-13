@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-void main() {
+void main()
+{
     double alpha;
     scanf("%lf", &alpha);
 

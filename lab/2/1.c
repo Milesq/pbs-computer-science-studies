@@ -2,23 +2,28 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-void scanN(const int arr[], size_t size) {
-    for (size_t i = 0; i < size; ++i) {
+void scanN(const int arr[], size_t size)
+{
+    for (size_t i = 0; i < size; ++i)
+    {
         scanf("%d", arr + i);
     }
 }
 
-bool isPositive(int el) {
+bool isPositive(int el)
+{
     return el >= 0;
 }
 
-bool isNegative(int el) {
+bool isNegative(int el)
+{
     return el < 0;
 }
 
-int matchingElements(int*, size_t, bool (*cb)(int));
+int matchingElements(int *, size_t, bool (*cb)(int));
 
-void main() {
+void main()
+{
     int in[4];
     scanN(in, 4);
 
@@ -28,11 +33,14 @@ void main() {
     printf("Wiecej jest liczb %s", noPositives > noNegatives ? "dodatnich" : "ujemnych");
 }
 
-int matchingElements(int* arr, size_t size, bool (*cb)(int)) {
+int matchingElements(int *arr, size_t size, bool (*cb)(int))
+{
     int count = 0;
 
-    for (size_t i = 0; i < size; ++i) {
-        if (cb(*(arr + i))) {
+    for (size_t i = 0; i < size; ++i)
+    {
+        if (cb(*(arr + i)))
+        {
             ++count;
         }
     }
